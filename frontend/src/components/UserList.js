@@ -29,7 +29,7 @@ return (
             <Link to="add" className="button is-success">
                 Add New
             </Link>
-            <table>
+            <table className="table is-striped is-fullwidth mt-2">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -66,7 +66,7 @@ return (
             </table>
         </div>
     </div>
-);
+    );
 };
 
 export default UserList;

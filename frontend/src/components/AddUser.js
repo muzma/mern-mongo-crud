@@ -26,24 +26,37 @@ export const AddUser = () => {
   return (
     <div className="columns">
         <div className="column is-half">
-                <form>
+                <form onSubmit={saveUser}>
             <div className="field">
                 <label className="label">Name</label>
                 <div className="control">
-                    <input type="text" className="input" placeholder='Name'/>
+                    <input 
+                    type="text" 
+                    className="input" 
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder='Name'/>
                 </div>
             </div>
             <div className="field">
                 <label className="label">Email</label>
                 <div className="control">
-                    <input type="text" className="input" placeholder='Email'/>
+                    <input 
+                    type="text" 
+                    className="input" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder='Email'
+                    />
                 </div>
             </div>
             <div className="field">
                 <label className="label">Gender</label>
                 <div className="control">
                     <div className="select is-fullwidth">
-                        <select>
+                        <select
+                        value={gender}
+                        onChange={(e) => setGender(e.target.value)}>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
@@ -60,3 +73,4 @@ export const AddUser = () => {
     </div>
   )
 }
+export default AddUser;
