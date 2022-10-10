@@ -1,6 +1,28 @@
-import React from 'react'
+import React, { useState} from 'react';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 export const AddUser = () => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [gender, setGender] = useState("Male");
+    const navigate = useNavigate();
+
+    const saveUser = async (e) => {
+        e.preventDefault();
+        try{
+            await axios.post("http://localhost:5001/users",{
+                name,
+                email,
+                gender,
+            });
+            navigate("/");
+        }catch(error){
+            console.log(error);
+        }
+    };
+
   return (
     <div className="columns">
         <div className="column is-half">
